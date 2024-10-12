@@ -1,6 +1,7 @@
 import React from "react";
 
-const TodoNew = () => {
+const TodoNew = (props) => {
+  const { addNewTodo } = props;
   return (
     <div className="todo-new">
       <input
@@ -10,7 +11,9 @@ const TodoNew = () => {
         id=""
         placeholder="Add new todo ..."
       />
-      <button className="todo-new-btn">Add</button>
+      <button className="todo-new-btn" onClick={addNewTodo}>
+        Add
+      </button>
     </div>
   );
 };
