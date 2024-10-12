@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Swal from "sweetalert2";
 
 const TodoNew = (props) => {
   const { addNewTodo } = props;
@@ -9,7 +10,15 @@ const TodoNew = (props) => {
   );
 
   const handleClickAddNewTodo = () => {
-    console.log(">>> check valueInput:", valueInput);
+    if (valueInput.trim() === "") {
+      Swal.fire({
+        icon: "warning",
+        title: "Warning 😥",
+        text: "Please add a new todo...!",
+        confirmButtonText: "Okay",
+      });
+      return;
+    }
     addNewTodo(valueInput);
     setValueInput("");
   };

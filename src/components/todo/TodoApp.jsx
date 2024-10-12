@@ -16,6 +16,13 @@ const TodoApp = () => {
     setTodoData([...todoData, newTodo]);
   };
 
+  const deleteTodo = (idTodo) => {
+    const newTodo = todoData.filter((item) => {
+      return item.id !== idTodo;
+    });
+    setTodoData(newTodo);
+  };
+
   const randomIntFromInterval = (min, max) => {
     // min and max included
     return Math.floor(Math.random() * (max - min + 1) + min);
@@ -26,10 +33,14 @@ const TodoApp = () => {
       <div className="todo-container">
         <div className="todo-title">Todo List</div>
         <TodoNew addNewTodo={addNewTodo} />
-        <TodoData todoData={todoData} />
-        <div className="todo-image">
-          <img src={reactLogo} className="logo" alt="" />
-        </div>
+
+        {todoData.length > 0 ? (
+          <TodoData todoData={todoData} deleteTodo={deleteTodo} />
+        ) : (
+          <div className="todo-image">
+            <img src={reactLogo} className="logo" alt="" />
+          </div>
+        )}
       </div>
     </>
   );

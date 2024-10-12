@@ -162,6 +162,7 @@
 .todo-image {
     text-align: center;
     margin-top: 20px;
+    font-size: 30px;
 }
 
 .logo {
@@ -193,4 +194,94 @@
     .logo {
         animation: logo-spin infinite 20s linear;
     }
+}
+
+/* Tùy chỉnh popup của SweetAlert2 */
+.swal2-popup {
+    border-radius: 15px;
+    /* Bo tròn các góc */
+    padding: 30px;
+    /* Thêm padding cho popup */
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+    /* Thêm bóng đổ */
+    background: #ffffff;
+    /* Màu nền trắng */
+    border: 2px solid #3498db;
+    /* Viền màu xanh */
+    font-family: 'Arial', sans-serif;
+    /* Font chữ */
+    animation: fadeIn 0.3s ease;
+    /* Hiệu ứng fade in */
+}
+
+/* Animation fade in cho popup */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Tùy chỉnh tiêu đề */
+.swal2-title {
+    font-size: 26px;
+    /* Kích thước chữ cho tiêu đề */
+    font-weight: 700;
+    /* Đậm chữ */
+    color: #34495e;
+    /* Màu chữ */
+    margin-bottom: 15px;
+    /* Khoảng cách dưới tiêu đề */
+    text-align: center;
+    /* Canh giữa */
+}
+
+/* Tùy chỉnh nội dung */
+.swal2-content {
+    font-size: 18px;
+    /* Kích thước chữ cho nội dung */
+    color: #555;
+    /* Màu chữ cho nội dung */
+    text-align: center;
+    /* Canh giữa */
+    margin-bottom: 20px;
+    /* Khoảng cách dưới nội dung */
+}
+
+/* Tùy chỉnh nút xác nhận */
+.swal2-confirm {
+    background-color: #3498db;
+    /* Màu nền cho nút xác nhận */
+    color: white;
+    /* Màu chữ cho nút xác nhận */
+    border-radius: 50px;
+    /* Bo tròn các góc của nút */
+    padding: 10px 25px;
+    /* Thêm padding cho nút */
+    border: none;
+    /* Không có viền */
+    font-weight: bold;
+    /* Chữ đậm */
+    transition: background-color 0.4s ease, transform 0.4s ease;
+    /* Hiệu ứng chuyển đổi */
+    cursor: pointer;
+    /* Con trỏ tay khi hover */
+}
+
+.swal2-confirm:hover {
+    background-color: #2980b9;
+    /* Màu nền khi hover */
+    transform: translateY(-2px);
+    /* Hiệu ứng nhấc lên khi hover */
+}
+
+/* Tùy chỉnh backdrop */
+.swal2-backdrop {
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Màu nền cho backdrop */
 }
