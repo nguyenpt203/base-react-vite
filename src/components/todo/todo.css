@@ -1,0 +1,165 @@
+/* Container chung */
+.todo-container {
+    margin: 50px auto;
+    width: 600px;
+    background: linear-gradient(135deg, #ffffff, #f9f9f9);
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.todo-container:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 22px 45px rgba(0, 0, 0, 0.2);
+}
+
+/* Tiêu đề */
+.todo-title {
+    font-size: 50px;
+    margin-bottom: 35px;
+    text-align: center;
+    font-weight: 800;
+    color: #34495e;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #16a085, #3498db, #e74c3c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientFlow 5s ease infinite;
+}
+
+/* Animation cho tiêu đề */
+@keyframes gradientFlow {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+/* Phần thêm todo mới */
+.todo-new {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.todo-new-input {
+    font-size: 20px;
+    padding: 15px 25px;
+    width: 70%;
+    border-radius: 50px;
+    border: 2px solid #ddd;
+    background-color: #fafafa;
+    outline: none;
+    transition: all 0.4s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.todo-new-input:focus {
+    border-color: #3498db;
+    background-color: #fff;
+    box-shadow: 0 0 15px rgba(52, 152, 219, 0.4);
+}
+
+/* Nút thêm todo */
+.todo-new-btn {
+    font-size: 18px;
+    padding: 15px 35px;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease;
+    background: linear-gradient(45deg, #e74c3c, #3498db);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.todo-new-btn:hover {
+    background-position: right;
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(231, 76, 60, 0.3);
+}
+
+/* Danh sách todo */
+.todo-data {
+    margin-top: 35px;
+    border-radius: 12px;
+    border: 1px solid #eee;
+    padding: 25px;
+    background-color: #fafafa;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.6s ease;
+}
+
+/* Animation xuất hiện danh sách todo */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mục todo */
+.todo-data div {
+    font-size: 22px;
+    padding: 18px;
+    background-color: #ecf0f1;
+    border-radius: 10px;
+    transition: background-color 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.todo-data div:hover {
+    background-color: #dfe6e9;
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.todo-image {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.logo {
+    height: 6em;
+    padding: 1.5em;
+    will-change: filter;
+    transition: filter 300ms;
+}
+
+.logo:hover {
+    filter: drop-shadow(0 0 2em #646cffaa);
+}
+
+.logo.react:hover {
+    filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .logo {
+        animation: logo-spin infinite 20s linear;
+    }
+}

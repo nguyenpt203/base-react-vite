@@ -1,15 +1,19 @@
-import { useState } from "react";
+import "./components/todo/todo.css";
+import TodoData from "./components/todo/TodoData";
+import TodoNew from "./components/todo/TodoNew";
 import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
-import MyComponent from "./components/learn/MyComponent";
-import SecondComponent from "./components/learn/SecondComponent";
-
 const App = () => {
+  const myName = "NguyenPT";
   return (
     <>
-      <MyComponent />
-      <SecondComponent />
+      <div className="todo-container">
+        <div className="todo-title">Todo List</div>
+        <TodoNew />
+        <TodoData />
+        <div className="todo-image">
+          <img src={reactLogo} className="logo" alt="" />
+        </div>
+      </div>
     </>
   );
 };
