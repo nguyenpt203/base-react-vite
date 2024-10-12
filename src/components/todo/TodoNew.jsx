@@ -1,15 +1,19 @@
 import React, { useState } from "react";
 
 const TodoNew = (props) => {
-  // useStack hook
+  const { addNewTodo } = props;
+
+  // useState hook (getter & setter)
   const [valueInput, setValueInput] = useState("NguyenPhung");
 
   const handleClickAddNewTodo = () => {
-    console.log(">>> check value input", valueInput);
+    console.log(">>> check valueInput:", valueInput);
+    addNewTodo(valueInput);
   };
 
-  const handleOnChangeInput = (name) => {
-    setValueInput(name);
+  // valueOnChangeInput: nhận giá trị từ onChange
+  const handleOnChangeInput = (valueOnChangeInput) => {
+    setValueInput(valueOnChangeInput);
   };
 
   return (
