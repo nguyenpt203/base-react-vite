@@ -1,12 +1,18 @@
 /* Container chung */
+
+
 .todo-container {
     margin: 50px auto;
     width: 600px;
+    max-height: 90vh;
+    /* Giới hạn chiều cao để phù hợp với màn hình */
     background: linear-gradient(135deg, #ffffff, #f9f9f9);
     border-radius: 15px;
     padding: 40px;
     box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    /* Ngăn các phần tử bên trong vượt khỏi container */
 }
 
 .todo-container:hover {
@@ -98,6 +104,10 @@
     gap: 15px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     animation: fadeIn 0.6s ease;
+    max-height: 400px;
+    /* Giới hạn chiều cao của danh sách todo */
+    overflow-y: auto;
+    /* Thanh cuộn khi danh sách vượt quá chiều cao */
 }
 
 /* Animation xuất hiện danh sách todo */
@@ -128,6 +138,27 @@
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
+.todo-item {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Nút xóa todo */
+.todo-item-btn {
+    font-size: 20px;
+    color: #e74c3c;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.todo-item-btn:hover {
+    color: #c0392b;
+    transform: scale(1.1);
+}
+
+/* Logo */
 .todo-image {
     text-align: center;
     margin-top: 20px;
