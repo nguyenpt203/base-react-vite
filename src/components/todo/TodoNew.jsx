@@ -1,13 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 
 const TodoNew = (props) => {
-  const { addNewTodo } = props;
+  // useStack hook
+  const [valueInput, setValueInput] = useState("NguyenPhung");
+
   const handleClickAddNewTodo = () => {
-    alert("hi");
+    console.log(">>> check value input", valueInput);
   };
+
   const handleOnChangeInput = (name) => {
-    console.log(">>> check handleOnChangeInput: ", name);
+    setValueInput(name);
   };
+
   return (
     <div className="todo-new">
       <input
