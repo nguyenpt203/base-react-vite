@@ -23,11 +23,6 @@ const TodoNew = (props) => {
     setValueInput("");
   };
 
-  // valueOnChangeInput: nhận giá trị từ onChange
-  const handleOnChangeInput = (valueOnChangeInput) => {
-    setValueInput(valueOnChangeInput);
-  };
-
   return (
     <div className="todo-new">
       <input
@@ -37,7 +32,7 @@ const TodoNew = (props) => {
         id=""
         placeholder="Add new todo ..."
         onChange={(event) => {
-          handleOnChangeInput(event.target.value);
+          setValueInput(event.target.value);
         }}
         value={valueInput}
       />
